@@ -27,4 +27,8 @@ app.use(apiRateLimiter);
 app.use(appConfig.apiPrefix, routes);
 app.use(errorMiddleware);
 
+app.get('/',(req,res)=>{
+  res.send("hello world")
+})
+
 export default app;
