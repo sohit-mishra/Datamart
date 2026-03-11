@@ -1,20 +1,7 @@
 import { productRepository } from "../repositories/index.repository.js";
-import { cacheService } from "../cache/cache.service.js";
-import { CACHE_KEYS } from "../cache/cache.keys.js";
 
 const getProducts = async () => {
-  const cacheKey = CACHE_KEYS.PRODUCTS_LIST
-  const cached = await cacheService.get(cacheKey)
-  if (cached) {
-    return JSON.parse(cached)
-  }
-
   const products = await productRepository.getProducts()
-  await cacheService.set(
-    cacheKey,
-    JSON.stringify(products),
-    300
-  )
   return products
 }
 
