@@ -38,19 +38,15 @@ src/
 ├── bootstrap
 │   ├── app.bootstrap.js
 │   ├── database.bootstrap.js
-│   ├── redis.bootstrap.js
 │   └── server.bootstrap.js
 │
 ├── cache
-│   ├── cache.keys.js
-│   ├── cache.service.js
-│   └── redis.client.js
+│   └── cache.service.js
 │
 ├── config
 │   ├── app.config.js
 │   ├── env.config.js
 │   ├── logger.config.js
-│   ├── redis.config.js
 │   ├── supabase.config.js
 │   └── cloudinary.config.js
 │
@@ -148,8 +144,6 @@ PORT=5000
 
 SUPABASE_URL=your_supabase_url
 SUPABASE_SERVICE_KEY=your_service_key
-
-REDIS_URL=redis://127.0.0.1:6379
 
 JWT_SECRET=your_secret_key
 JWT_EXPIRES=7d
@@ -313,7 +307,6 @@ POST `/products`
 
 # Performance Features
 
-- Redis API caching
 - Pagination support
 - Structured logging
 - Input validation

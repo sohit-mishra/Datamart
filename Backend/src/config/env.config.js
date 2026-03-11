@@ -11,8 +11,6 @@ const env = cleanEnv(process.env, {
   SUPABASE_URL: url(),
   SUPABASE_SERVICE_KEY: str(),
 
-  REDIS_URL: str(),
-
   JWT_SECRET: str(),
   JWT_EXPIRES: str({ default: "7d" })
 });
