@@ -1,4 +1,13 @@
 import winston from "winston";
+import fs from "fs";
+import path from "path";
+
+const logDir = "logs";
+
+// create logs folder if it does not exist
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
 
 const logger = winston.createLogger({
   level: "info",
@@ -10,8 +19,9 @@ const logger = winston.createLogger({
 
   transports: [
     new winston.transports.Console(),
+
     new winston.transports.File({
-      filename: "logs/app.log"
+      filename: path.join(logDir, "app.log")
     })
   ]
 });
