@@ -16,7 +16,7 @@ app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FORNTEND_URL,
     credentials: true
   })
 )
